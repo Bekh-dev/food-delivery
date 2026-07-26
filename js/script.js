@@ -12,4 +12,12 @@ window.addEventListener('DOMContentLoaded', () => {
 			i.classList.remove('.tabheader__item_active');
 		});
 	}
+
+	function showTabContent(i = 0) {
+		tabsContent[i].style.display = 'block';
+		tabs[i].classList.add('.tabheader__item_active');
+	}
+
+	hideTabContent();
+	showTabContent();
 });
