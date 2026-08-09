@@ -103,8 +103,14 @@ window.addEventListener('DOMContentLoaded', () => {
 		modalTrigger = document.querySelectorAll('[data-modal]');
 
 	modalTrigger.forEach(btn => {
-		btn.addEventListener('click', function () {
-			modal.style.display = 'block';
+		btn.addEventListener('click', () => {
+			modal.classList.add('show');
+			modal.classList.remove('fade');
 		});
+	});
+
+	modalCloseBtn.addEventListener('click', () => {
+		modal.classList.add('fade');
+		modal.classList.remove('show');
 	});
 });
