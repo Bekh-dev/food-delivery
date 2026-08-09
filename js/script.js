@@ -1,5 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
 	// Tabs
+
 	const tabs = document.querySelectorAll('.tabheader__item'),
 		tabsContent = document.querySelectorAll('.tabcontent'),
 		tabsParent = document.querySelector('.tabheader__items');
@@ -104,13 +105,28 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	modalTrigger.forEach(btn => {
 		btn.addEventListener('click', () => {
-			modal.classList.add('show');
-			modal.classList.remove('fade');
+			openModal();
 		});
 	});
 
 	modalCloseBtn.addEventListener('click', () => {
+		closeModal();
+	});
+
+	modal.addEventListener('click', e => {
+		if (e.target === modal) {
+			closeModal();
+		}
+	});
+
+	function closeModal() {
 		modal.classList.add('fade');
 		modal.classList.remove('show');
-	});
+		document.body.style.overflow = '';
+	}
+	function openModal() {
+		modal.classList.add('show');
+		modal.classList.remove('fade');
+		document.body.style.overflow = 'hidden';
+	}
 });
