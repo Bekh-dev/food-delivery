@@ -139,5 +139,22 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	window.addEventListener('scroll', showModalByScroll);
 
-	const modalTimerId = setTimeout(openModal, 10000);
+	// const modalTimerId = setTimeout(openModal, 10000);
+
+	//Class
+
+	class MenuCard {
+		constructor(src, alt, title, descr, price) {
+			this.src = src;
+			this.alt = alt;
+			this.title = title;
+			this.descr = descr;
+			this.price = price;
+			this.transfer = 27;
+		}
+
+		changeToUAH() {
+			this.transfer * this.price;
+		}
+	}
 });
